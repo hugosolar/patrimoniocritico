@@ -1,0 +1,65 @@
+{
+    "name": "patrimoniocritico/site",
+    "description": "Patrimonio Critico",
+    "type": "project",
+    "authors": [
+      {
+        "name": "Hugo Solar",
+        "email": "soy@hugo.solar"
+      },
+      {
+        "name": "Esteban Vasquez",
+        "email": "elestean@pdi.cl"
+      }
+    ],
+    "repositories" : [
+      {
+        "type": "composer",
+        "url": "https://wpackagist.org"
+      }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+      "wpackagist-plugin/akismet": "5.3.7",
+      "wpackagist-plugin/co-authors-plus": "3.6.3",
+      "wpackagist-plugin/public-post-preview": "3.0.1",
+      "wpackagist-plugin/query-monitor": "3.17.2",
+      "wpackagist-plugin/safe-redirect-manager": "2.2.2",
+      "wpackagist-plugin/syntaxhighlighter": "3.7.1",
+      "wpackagist-plugin/wordpress-seo": "24.5",
+      "wpackagist-plugin/restricted-site-access": "7.5.2",
+      "composer/installers": "^2.3"
+    },
+    "require-dev": {
+      "10up/phpcs-composer": "^3.0",
+      "wpackagist-plugin/debug-bar": "1.1.6",
+      "wpackagist-plugin/debug-bar-elasticpress": "3.1.1",
+      "wpackagist-plugin/rewrite-rules-inspector": "1.4.0",
+      "wpackagist-plugin/user-switching": "1.9.1",
+      "wp-coding-standards/wpcs": "^3.1.0",
+      "php-stubs/wp-cli-stubs": "^2.10",
+      "wpackagist-plugin/wp-crontrol": "1.18.0"
+    },
+    "extra": {
+      "installer-paths": {
+        "./plugins/{$name}/": [
+          "type:wordpress-plugin"
+        ],
+        "./themes/{$name}": [
+          "type:wordpress-theme"
+        ]
+      }
+    },
+    "scripts": {
+      "lint": "phpcs --standard=WordPress --extensions=php --ignore=vendor/* ./plugins/microsoft-cela-review/* && phpcs --standard=WordPress --extensions=php --ignore=vendor/*,plugins/*",
+      "fix-lint": "phpcbf --standard=WordPress --extensions=php --ignore=vendor/*,plugins/* ."
+    },
+    "config": {
+      "allow-plugins": {
+        "composer/installers": true,
+        "dealerdirect/phpcodesniffer-composer-installer": true
+      }
+    }
+  }
+  
