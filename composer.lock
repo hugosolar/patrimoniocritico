@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "02526161fd1a20e57f8037d6498acf4d",
+    "content-hash": "703d817e1805053083b5a5913b0f2803",
     "packages": [
         {
             "name": "composer/installers",
@@ -1156,24 +1156,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/debug-bar/"
-        },
-        {
-            "name": "wpackagist-plugin/debug-bar-elasticpress",
-            "version": "3.1.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/debug-bar-elasticpress/",
-                "reference": "tags/3.1.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/debug-bar-elasticpress.3.1.1.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/debug-bar-elasticpress/"
         },
         {
             "name": "wpackagist-plugin/rewrite-rules-inspector",
