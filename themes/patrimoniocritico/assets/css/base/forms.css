@@ -1,0 +1,13 @@
+input[type="date"] {
+	background-color: var(--input-background-color, light-dark(var(--wp--custom--color--core--off-white--50), var(--wp--custom--color--core--brilliant-blue--900)));
+	border: var(--input-border, 0);
+	border-radius: var(--input-border-radius, var(--wp--custom--radius--core--sm));
+	box-shadow: var(--input-box-shadow, var(--wp--custom--shadow--core--100));
+	padding: var(--input-box-padding, var(--wp--preset--spacing--xs) var(--wp--preset--spacing--sm));
+	width: 100%;;
+}
+
+*:has(input) > label {
+	display: block;
+	margin-block-end: var(--label-margin-block-end, var(--wp--preset--spacing--2-xs));
+}

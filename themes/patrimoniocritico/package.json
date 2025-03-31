@@ -1,0 +1,43 @@
+{
+	"name": "patrimoniocritico-theme",
+	"version": "1.0.0",
+	"scripts": {
+		"start": "npm run watch",
+		"watch": "10up-toolkit watch --port=5020",
+		"build": "10up-toolkit build",
+		"build:analyze": "10up-toolkit build --analyze",
+		"format-js": "10up-toolkit format-js",
+		"lint-js": "10up-toolkit lint-js",
+		"lint-style": "10up-toolkit lint-style",
+		"test": "10up-toolkit test-unit-jest",
+		"clean-dist": "rm -rf ./dist",
+		"scaffold:block": "cd includes/blocks/ && wp-create-block --no-plugin --template ../../../../bin/create-block-template"
+	},
+	"engines": {
+		"node": ">=20.11.0",
+		"npm": ">=10.3.0"
+  	},
+	"devDependencies": {
+		"10up-toolkit": "^6.2.1"
+	},
+	"dependencies": {
+		"@10up/block-components": "^1.19.4",
+		"clsx": "^2.1.1",
+		"vidstack": "^1.10.7",
+		"ua-parser-js": "^2.0.0"
+	},
+	"10up-toolkit": {
+		"useBlockAssets": true,
+		"useScriptModules": true,
+		"entry": {
+			"editor-style-overrides": "./assets/css/editor-style-overrides.css",
+			"alt-text-required-style": "./assets/css/utilities/alt-text-required.css",
+			"external-plugins": "./assets/css/plugins.css",
+			"frontend": "./assets/js/frontend.js",
+			"block-extensions": "./assets/js/block-extensions.js",
+		}
+	},
+	"overrides": {
+		"@tanstack/react-query": "5.52.0"
+	}
+}

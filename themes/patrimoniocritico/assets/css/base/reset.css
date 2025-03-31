@@ -1,0 +1,126 @@
+/*
+ * Use a more-intuitive box-sizing model.
+ */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/*
+ * Allow percentage-based heights in the application
+ */
+html,
+body,
+.wp-site-blocks {
+	min-height: 100%;
+}
+
+/*
+ * Remove height from the admin bar of the overall height
+ */
+html {
+	height: calc(100% - var(--wp-admin--admin-bar--height, 0px));
+}
+
+/*
+ * Improve text rendering
+ */
+body {
+	color-scheme: var(--color-scheme, light);
+	-webkit-font-smoothing: antialiased;
+
+	&.dark {
+		--color-scheme: dark;
+	}
+}
+
+/*
+ * Improve media defaults
+ */
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
+/*
+ * Ensure the alt text is visible when an image is missing
+ */
+img {
+	font-size: 1rem;
+	font-style: italic;
+	line-height: 1.5;
+}
+
+/*
+ * Remove built-in form typography styles
+ */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/*
+ * Avoid text overflows
+ */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+	text-wrap: pretty; /* pretty is the nicer result but it isn't supported as well. So balance is here as a fallback */
+}
+
+strong {
+	font-weight: var(--wp--custom--font--weight--core--semi-bold);
+}
+
+/*
+ * Create a root stacking context
+ */
+.wp-site-blocks {
+	isolation: isolate;
+
+	& > * {
+		margin-block: 0;
+	}
+}
+
+[contentEditable="true"],
+[tabindex="-1"][id],
+[tabindex],
+a[href],
+area[href],
+button,
+iframe,
+input,
+select,
+textarea {
+
+	&:focus-visible {
+		outline: 0.1875rem dotted currentColor;
+	}
+}
+
+button {
+	outline-offset: var(--wp--custom--outline-offset--400);
+}

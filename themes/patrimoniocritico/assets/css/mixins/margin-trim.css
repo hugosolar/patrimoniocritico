@@ -1,0 +1,32 @@
+/**
+ * Mixin: margin-trim
+ *
+ * Purpose:
+ * Provides a consistent way to remove unwanted block margins for child elements
+ * in a container by leveraging the `margin-trim` property (if supported).
+ *
+ * Fallback:
+ * For browsers that do not support `margin-trim`, it manually removes the
+ * top margin of the first child and the bottom margin of the last child.
+ *
+ * Usage:
+ * Include this mixin on any container where you want to trim excess block
+ * margins.
+ *
+ * Example:
+ * @include margin-trim;
+ */
+@define-mixin margin-trim {
+	margin-trim: block;
+
+	@supports not (margin-trim: block) {
+
+		& > *:first-child {
+			margin-top: 0;
+		}
+
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

@@ -1,0 +1,10 @@
+.is-layout-constrained > .alignleft {
+	float: none;
+	margin-inline: auto;
+	max-width: var(--wp--style--global--content-size);
+	width: 100%;
+}
+
+.has-global-padding > .alignfull {
+	margin-inline: 0;
+}
