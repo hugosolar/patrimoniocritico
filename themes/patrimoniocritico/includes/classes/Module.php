@@ -2,7 +2,7 @@
 /**
  * Module
  *
- * @package BlogInABoxTheme
+ * @package PatrimonioCritico
  */
 
 namespace PatrimonioCritico;

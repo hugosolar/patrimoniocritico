@@ -18,6 +18,7 @@ use function PatrimonioCritico\Utility\get_asset_info;
  * @return void
  */
 function setup() {
+	add_action( 'init', 'PatrimonioCritico\Core\init', apply_filters( 'patrimoniocritico_theme_init_priority', 8 ) );
 	add_action( 'after_setup_theme', 'PatrimonioCritico\Core\i18n' );
 	add_action( 'after_setup_theme', 'PatrimonioCritico\Core\theme_setup' );
 	add_action( 'after_setup_theme', 'PatrimonioCritico\Core\register_image_sizes' );
@@ -27,7 +28,6 @@ function setup() {
 	add_action( 'wp_head', 'PatrimonioCritico\Core\js_detection', 0 );
 	add_action( 'wp_head', 'PatrimonioCritico\Core\scrollbar_detection', 0 );
 	add_action( 'wp_head', 'PatrimonioCritico\Core\embed_ct_css', 0 );
-	add_action( 'init', 'PatrimonioCritico\Core\register_all_icons', 10 );
 	add_action( 'init', 'PatrimonioCritico\Core\register_menus' );
 }
 
@@ -44,7 +44,7 @@ function init(): void {
 	if ( ! file_exists( PATRIMONIOCRITICO_THEME_PATH . 'composer.json' ) ) {
 		add_action(
 			'admin_notices',
-			function() {
+			function () {
 				$class = 'notice notice-error';
 				/* translators: %s: the path to the plugin */
 				$message = sprintf(
